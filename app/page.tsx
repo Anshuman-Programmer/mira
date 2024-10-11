@@ -1,11 +1,11 @@
-"use client";
-
-import { useCurrent } from "@/features/auth/api/use-current";
+import { getCurrent } from "@/features/auth/actions";
 import UserButton from "@/features/auth/components/user-button";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  const { data, isLoading } = useCurrent();
-  console.log("data, isLoading", data, isLoading);
+export default async function Home() {
+  const user = await getCurrent();
+
+  if (!user) redirect("/sign-in");
 
   return (
     <div className="grid text-blue-600 grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
