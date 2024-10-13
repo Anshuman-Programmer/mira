@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { Sidebar } from "@/components/sidebar";
+import { CreateProjectModel } from "@/features/projects/components/create-project-model";
 import { CreateWorkspaceModel } from "@/features/workspaces/components/create-workspace-model";
 import React, { ReactNode } from "react";
 
@@ -11,6 +12,7 @@ function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="min-h-screen ">
       <CreateWorkspaceModel />
+      <CreateProjectModel />
       <div className="flex w-full h-full">
         <div className="fixed left-0 top-0 hidden lg:block lg:w-[264px] h-full overflow-auto">
           <Sidebar />

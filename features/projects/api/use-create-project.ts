@@ -3,27 +3,29 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferRequestType, InferResponseType } from "hono";
 import { toast } from "sonner";
 
-type ResponseType = InferResponseType<(typeof client.api.workspaces)["$post"]>;
-type RequestType = InferRequestType<(typeof client.api.workspaces)["$post"]>;
+type ResponseType = InferResponseType<
+  (typeof client.api.projects)["$post"],
+  200
+>;
+type RequestType = InferRequestType<(typeof client.api.projects)["$post"]>;
 
-export const useCreateWorkspace = () => {
+export const useCreateProject = () => {
   const queryClient = useQueryClient();
   const mutatuion = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async ({ form }) => {
-      const response = await client.api.workspaces["$post"]({ form });
+      const response = await client.api.projects["$post"]({ form });
       if (!response.ok) {
-        throw new Error("Failed to create workspace");
+        throw new Error("Failed to create project");
       }
       return await response.json();
     },
-    onSuccess: () => {
-      toast.success("Workspace created");
-      queryClient.invalidateQueries({ queryKey: ["workspaces"] });
+    onSuccess: ({ data }) => {
+      toast.success("Project created");
       queryClient.invalidateQueries({ queryKey: ["projects"] });
+      return data;
     },
     onError: () => {
-      toast.error("Failed to create workspace");
-      queryClient.invalidateQueries({ queryKey: ["workspaces"] });
+      toast.error("Failed to create project");
       queryClient.invalidateQueries({ queryKey: ["projects"] });
     },
   });

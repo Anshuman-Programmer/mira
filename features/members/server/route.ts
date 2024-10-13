@@ -78,9 +78,9 @@ const app = new Hono()
       userId: user.$id,
     });
 
-    if (!member) return c.json({ error: "Unauthorized 1" }, 401);
+    if (!member) return c.json({ error: "Unauthorized" }, 401);
     if (member.$id !== memberToDelete.$id && member.role === MemberRole.ADMIN)
-      return c.json({ error: "Unauthorized 2" }, 401);
+      return c.json({ error: "Unauthorized" }, 401);
 
     await databases.deleteDocument(DATABASE_ID, MEMBERS_ID, memberId);
 
