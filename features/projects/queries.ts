@@ -21,6 +21,8 @@ export const getProject = async ({ projectId }: GetProjectProps) => {
       projectId
     );
 
+    if (!project) throw new Error("Project does not exist");
+
     const member = await getMember({
       databases,
       workspaceId: project.workspaceId,

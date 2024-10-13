@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { getCurrent } from "@/features/auth/queries";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 import { getProject } from "@/features/projects/queries";
+import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { PencilIcon } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -10,6 +11,7 @@ import React from "react";
 interface ProjectPageProps {
   params: {
     projectId: string;
+    workspaceId: string;
   };
 }
 
@@ -20,6 +22,8 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
   const project = await getProject({ projectId: params.projectId });
 
   if (!project) throw Error("Project Not found");
+
+  const href = `/workspaces/${params.workspaceId}/projects/${params.projectId}/settings`;
 
   return (
     <div className="flex flex-col gap-y-4">
@@ -34,7 +38,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         </div>
         <div>
           <Button variant={"secondary"} size={"sm"} asChild>
-            <Link href={""}>
+            <Link href={href}>
               <PencilIcon className="size-4 mr-2" />
               Edit project
             </Link>
