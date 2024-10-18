@@ -24,11 +24,11 @@ import { cn } from "@/lib/utils";
 import { useCreateProject } from "../api/use-create-project";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 
-interface CreateWorkspaceFormProps {
+interface CreateProjectFormProps {
   onCancel?: () => void;
 }
 
-export const CreateProjectForm = ({ onCancel }: CreateWorkspaceFormProps) => {
+export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
   const router = useRouter();
   const { mutate, isPending } = useCreateProject();
 
