@@ -14,3 +14,9 @@ export const generateinviteCode = (length: number) => {
   }
   return result;
 };
+
+export const snackeCateToTitleCase = (str: string) =>
+  str
+    ?.toLocaleLowerCase()
+    ?.replace(/_/g, " ")
+    ?.replace(/\b\w/g, (char) => char?.toUpperCase());
