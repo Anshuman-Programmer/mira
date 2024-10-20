@@ -3,7 +3,6 @@ import { getCurrent } from "@/features/auth/queries";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 import { getProject } from "@/features/projects/queries";
 import TaskViewSwitcher from "@/features/tasks/components/task-view-switcher";
-import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { PencilIcon } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
