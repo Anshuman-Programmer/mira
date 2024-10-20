@@ -7,9 +7,8 @@ import {
   CircleDotDashedIcon,
   CircleDotIcon,
   CircleIcon,
-  PlusIcon,
+  // PlusIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface KanbanColumnHeaderProps {
   board: TaskStatus;

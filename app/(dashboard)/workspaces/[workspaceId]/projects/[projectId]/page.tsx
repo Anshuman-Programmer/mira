@@ -21,7 +21,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 
   const project = await getProject({ projectId: params.projectId });
 
-  if (!project) throw Error("Project Not found");
+  if (!project) return null;
 
   const href = `/workspaces/${params.workspaceId}/projects/${params.projectId}/settings`;
 
