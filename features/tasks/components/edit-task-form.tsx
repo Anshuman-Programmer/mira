@@ -167,7 +167,7 @@ export const EditTaskForm = ({
                         <SelectItem value={TaskStatus.IN_PROGRESS}>
                           IN PROGRESS
                         </SelectItem>
-                        <SelectItem value={TaskStatus.IN_REVFIEW}>
+                        <SelectItem value={TaskStatus.IN_REVIEW}>
                           IN REVFIEW
                         </SelectItem>
                         <SelectItem value={TaskStatus.DONE}>DONE</SelectItem>

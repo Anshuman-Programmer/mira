@@ -82,7 +82,7 @@ export const DataFilters = ({ hideProjectFilter }: DataFiltersProps) => {
           <SelectItem value={TaskStatus.BACKLOG}>BACKLOG</SelectItem>
           <SelectItem value={TaskStatus.TODO}>TODO</SelectItem>
           <SelectItem value={TaskStatus.IN_PROGRESS}>IN PROGRESS</SelectItem>
-          <SelectItem value={TaskStatus.IN_REVFIEW}>IN REVFIEW</SelectItem>
+          <SelectItem value={TaskStatus.IN_REVIEW}>IN REVFIEW</SelectItem>
           <SelectItem value={TaskStatus.DONE}>DONE</SelectItem>
         </SelectContent>
       </Select>
