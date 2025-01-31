@@ -61,9 +61,9 @@ function TaskViewSwitcher() {
             <TabsTrigger className="h-8 w-full lg:w-auto" value="hanban">
               Kanban
             </TabsTrigger>
-            <TabsTrigger className="h-8 w-full lg:w-auto" value="calendar">
+            {/* <TabsTrigger className="h-8 w-full lg:w-auto" value="calendar">
               Calendar
-            </TabsTrigger>
+            </TabsTrigger> */}
           </TabsList>
           <Button onClick={open} size={"sm"} className="w-full lg:w-auto">
             <PlusIcon className="size-4 mr-2" />
