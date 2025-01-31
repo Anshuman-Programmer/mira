@@ -6,8 +6,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import {
-  GoCheckCircle,
-  GoCheckCircleFill,
+  // GoCheckCircle,
+  // GoCheckCircleFill,
   GoHome,
   GoHomeFill,
 } from "react-icons/go";
